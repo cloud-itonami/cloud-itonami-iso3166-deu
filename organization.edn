@@ -1,0 +1,3 @@
+;; Real-world organization location / contact.
+;; :head-role is institutional title only — no personal names.
+{:contact-page "https://www.wikidata.org/wiki/Q586", :ooyake-id "gov.deu", :sourced-from "com-etzhayyim-ooyake gov-units (verbatim where present)", :head-role-note "institutional office title only; personal names of current office-holders are intentionally NOT stored", :official-url "https://www.bund.de/", :hq {:line-en "Bonn", :country "deu", :kind "capital", :provenance "https://www.wikidata.org/wiki/Q586", :last-verified "2026-06-04", :sourcing "authoritative"}, :wikidata "Q183", :name-en "Federal Republic of Germany", :name-local "Bundesrepublik Deutschland"}
