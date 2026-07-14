@@ -8,5 +8,15 @@
   :head-role-note "institutional office title only; personal names of current office-holders are intentionally NOT stored"
   :contact-page "https://www.wikidata.org/wiki/Q586"
   :sourced-from "com-etzhayyim-ooyake gov-units (verbatim where present)"
-  :hq {:line-en "Bonn" :country "deu" :kind "capital" :provenance "https://www.wikidata.org/wiki/Q586" :last-verified "2026-06-04" :sourcing "authoritative"}
+  ;; 2026-07-14 correction: same class of bug found in cloud-itonami-iso3166-jpn
+  ;; (commit 15252d7, "Shigaraki Palace"). Upstream com-etzhayyim-ooyake's
+  ;; gov-units.capitals.edn carries "Bonn" (Q586, capital of West Germany
+  ;; 1949-1990) for gov.deu's :capital address instead of the current capital,
+  ;; Berlin (Q64, capital since German reunification 1990-10-03) -- Germany's
+  ;; Wikidata item has multiple historical P36 claims and the ingestion grabbed
+  ;; a non-current one. Verified directly against Wikidata 2026-07-14; NOT yet
+  ;; fixed upstream in ooyake. This is now the SECOND confirmed instance of
+  ;; this bug class (JPN + DEU), suggesting it may be systemic across ooyake's
+  ;; ~190 country entries wherever a country's capital changed historically.
+  :hq {:line-en "Berlin" :country "deu" :kind "capital" :provenance "https://www.wikidata.org/wiki/Q64" :last-verified "2026-07-14" :sourcing "authoritative"}
 }
