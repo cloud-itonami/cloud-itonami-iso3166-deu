@@ -1,0 +1,33 @@
+;; data/datascript-tx.edn — DataScript tx-data derived from src/statute/facts.cljc
+;; `statute.facts/catalog` (ADR-2607141700 Wave 0). Same shape as sibling files.
+
+[#:statute{:id "deu.aktiengesetz"
+           :title "Aktiengesetz (AktG, Stock Corporation Act)"
+           :jurisdiction "DEU"
+           :kind :law
+           :law-number "AktG"
+           :url "https://www.gesetze-im-internet.de/aktg/index.html"
+           :url-provenance :official-gesetze-im-internet
+           :enacted-date "1965-09-06"
+           :retrieved-at "2026-07-14"
+           :topic [:corporate-governance :incorporation]}
+ #:statute{:id "deu.bundesdatenschutzgesetz"
+           :title "Bundesdatenschutzgesetz (BDSG, Federal Data Protection Act)"
+           :jurisdiction "DEU"
+           :kind :law
+           :law-number "BDSG"
+           :url "https://www.gesetze-im-internet.de/bdsg_2018/BJNR209710017.html"
+           :url-provenance :official-gesetze-im-internet
+           :enacted-date "2017-06-30"
+           :retrieved-at "2026-07-14"
+           :topic [:data-protection :privacy]}
+ #:statute{:id "deu.kuendigungsschutzgesetz"
+           :title "Kündigungsschutzgesetz (KSchG, Protection Against Dismissal Act)"
+           :jurisdiction "DEU"
+           :kind :law
+           :law-number "KSchG"
+           :url "https://www.gesetze-im-internet.de/kschg/BJNR004990951.html"
+           :url-provenance :official-gesetze-im-internet
+           :enacted-date "1951-08-10"
+           :retrieved-at "2026-07-14"
+           :topic [:labor :employment]}]
