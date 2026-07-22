@@ -22,7 +22,21 @@
     (is (nil? (facts/required-evidence-satisfied? "ATL" all)))))
 
 (deftest coverage-is-honest
-  (let [c (facts/coverage ["DEU" "USA" "ATL"])]
+  (let [c (facts/coverage ["DEU" "ATL" "ZZZ"])]
     (is (= 3 (:requested c)))
-    (is (= 2 (:covered c)))
-    (is (= ["ATL"] (:missing-jurisdictions c)))))
+    (is (= 1 (:covered c)))
+    (is (= ["DEU"] (:covered-jurisdictions c)))
+    (is (= ["ATL" "ZZZ"] (:missing-jurisdictions c)))))
+
+(deftest catalog-is-germany-only
+  (testing "no unlabeled foreign-jurisdiction contamination (scaffold-copy incident)"
+    (is (= #{"DEU"} (set (keys facts/catalog))))))
+
+(deftest deu-entry-cites-verified-authorities
+  (let [sb (facts/spec-basis "DEU")]
+    (is (= "GWB / VgV / UVgO" (:legal-basis sb)))
+    (is (re-find #"Beschaffungsamt des BMI" (:owner-authority sb)))
+    (is (re-find #"Bundesministerium|BMI" (:e-procurement-operator sb)))
+    (is (re-find #"Amtsgerichte" (:business-registration-authority sb)))
+    (is (re-find #"Finanzamt" (:tax-authority sb)))
+    (is (= "Bundeszentralamt für Steuern" (:corporate-number-owner-authority sb)))))
