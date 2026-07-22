@@ -8,4 +8,5 @@
  :itonami.blueprint/robotics false
  :itonami.blueprint/required-technologies [:identity :forms :dmn :bpmn :audit-ledger]
  :itonami.blueprint/status :public-oss
+ :itonami.blueprint/maturity :implemented
  :itonami.blueprint/organization {:ooyake-id "gov.deu" :official-url "https://www.bund.de/" :contact-page "https://www.wikidata.org/wiki/Q586"}}
